@@ -1,0 +1,1 @@
+c:\users\paczek\documents\visual studio 2015\Projects\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.exe.config
