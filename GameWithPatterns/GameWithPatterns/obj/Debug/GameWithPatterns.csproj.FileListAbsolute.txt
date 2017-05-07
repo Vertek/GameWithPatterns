@@ -1,1 +1,14 @@
 c:\users\paczek\documents\visual studio 2015\Projects\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.exe.config
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.exe.config
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.exe
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.pdb
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.csprojResolveAssemblyReference.cache
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.Properties.Resources.resources
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.csproj.GenerateResource.Cache
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.exe
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.pdb
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.dll
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.pdb
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.Game.resources
