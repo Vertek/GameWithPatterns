@@ -16,14 +16,26 @@ namespace GameWithPatterns
         private static volatile Game instance;
         private static readonly object padlock = new object();
         private List<MapElement> mapElements;
+        private BackgroundWorker worker;
+        private bool gameStatus = false;
 
         private Game()
         {
             InitializeComponent();
-
+            worker = new BackgroundWorker();
+            worker.DoWork += WorkerOnDoWork;
             var parser = new Utils.MapParser();
             mapElements = parser.ParseJsonToMap();
             GameWindow.Invalidate();
+        }
+
+        private void WorkerOnDoWork(object sender, DoWorkEventArgs doWorkEventArgs)
+        {
+            gameStatus = true;
+            while (gameStatus)
+            {
+                
+            }
         }
 
         public static Game getInstance()
