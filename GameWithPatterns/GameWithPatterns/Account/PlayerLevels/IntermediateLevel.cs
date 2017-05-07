@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameWithPatterns.Account.PlayerLevels
 {
-    class Intermediate
+    class IntermediateLevel
     {
     }
 }

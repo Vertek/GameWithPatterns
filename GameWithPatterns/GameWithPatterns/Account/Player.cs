@@ -16,10 +16,17 @@ namespace GameWithPatterns.Account
         private static Player Instance;
         private static object padlock = new object();
 
+        public float Speed;
+
         private Player(string name)
         {
             Name = name;
             Level = new BasicLevel();
+        }
+
+        public void SetMovement(float movement)
+        {
+            this.Speed = movement;
         }
 
         public static Player GetInstance(string name = "Player")

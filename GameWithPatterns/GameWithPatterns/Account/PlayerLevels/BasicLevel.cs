@@ -8,5 +8,15 @@ namespace GameWithPatterns.Account.PlayerLevels
 {
     class BasicLevel : Level
     {
+        public BasicLevel(Level level)
+        {
+            this.BonusMovement = 10;
+            this.ExpToNextLevel = 40;
+        }
+
+        protected override void SetMovement()
+        {
+            
+        }
     }
 }

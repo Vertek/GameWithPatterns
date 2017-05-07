@@ -45,7 +45,7 @@ namespace UtilsLibrary.Map
 
         public bool GetMap()
         {
-            File.WriteAllText(string.Format("{0}\\{1}", Environment.CurrentDirectory, "Map.json"), JsonConvert.SerializeObject(MapElements));
+            File.WriteAllText(Path.Combine("C:\\Users\\" + Environment.UserName + "\\Documents\\GameWithPatterns\\GameWithPatterns\\GameWithPatterns\\", "Map.json"), JsonConvert.SerializeObject(MapElements));
             return true;
         }
     }
