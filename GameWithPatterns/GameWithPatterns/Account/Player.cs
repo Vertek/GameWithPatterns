@@ -1,47 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using GameWithPatterns.Account;
-using GameWithPatterns.Account.PlayerLevels;
+﻿using GameWithPatterns.Account.Health;
 
 namespace GameWithPatterns.Account
 {
     public class Player
     {
-        private Level Level { get; set; }
-        private string Name { get; set; }
-
-        private static Player Instance;
-        private static object padlock = new object();
-
-        public float Speed;
-
-        private Player(string name)
+        private IHealth _healthState;
+        public IHealth HealthState
         {
-            Name = name;
-            Level = new BasicLevel();
+            get { return _healthState; }
+            set { _healthState = value; }
         }
 
-        public void SetMovement(float movement)
+        private static Player _instance;
+        private static readonly object Padlock = new object();
+
+        public float Movement { get; set; }
+        public int Health { get; set; }
+        public int AttackDamage { get; set; }
+        public int Accuracy { get; set; }
+
+        private Player()
         {
-            this.Speed = movement;
+            _healthState = new HealthyState(this);
         }
 
-        public static Player GetInstance(string name = "Player")
+        public static Player GetInstance()
         {
-            if (Instance == null)
+            if (_instance == null)
             {
-                lock (padlock)
+                lock (Padlock)
                 {
-                    if (Instance == null)
+                    if (_instance == null)
                     {
-                        Instance = new Player(name);
+                        _instance = new Player();
                     }
                 }
             }
-            return Instance;
+            return _instance;
         }
     }
 }
