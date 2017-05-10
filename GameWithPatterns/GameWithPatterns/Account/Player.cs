@@ -12,7 +12,6 @@ namespace GameWithPatterns.Account
             set { _healthState = value; }
         }
 
-        private Point _position;
         public Point Position;
 
         private static Player _instance;

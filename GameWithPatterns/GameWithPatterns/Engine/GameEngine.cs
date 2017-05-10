@@ -25,6 +25,7 @@ namespace GameWithPatterns.Engine
         public GameStatus Status = GameStatus.Paused;
         public BackgroundWorker GameWorker;
         private Control _gameWindow;
+        private Graphics g;
 
         public GameEngine(Player player, Control gameWindow)
         {
@@ -32,13 +33,14 @@ namespace GameWithPatterns.Engine
             _gameWindow = gameWindow;
             GameWorker = new BackgroundWorker();
             GameWorker.DoWork += Game;
+            g = gameWindow.CreateGraphics();
         }
 
         public void Game(object sender, DoWorkEventArgs e)
         {
             while (Status == GameStatus.Started)
             {
-                //RenderMap();
+                RenderMap();
                 InitializePlayer();
                 InitializeMonsters();
                 Thread.Sleep(100);
@@ -52,7 +54,6 @@ namespace GameWithPatterns.Engine
 
         public void InitializePlayer()
         {
-            var g = _gameWindow.CreateGraphics();
             g.FillEllipse(new SolidBrush(Color.Black), _player.Position.X, _player.Position.Y, 16, 16);
         }
 

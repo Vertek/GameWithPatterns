@@ -25,6 +25,7 @@ namespace GameWithPatterns
         private GameForm()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.Selectable, true);
             KeyPreview = true;
             worker = new BackgroundWorker();
             worker.DoWork += WorkerOnDoWork;
@@ -86,35 +87,25 @@ namespace GameWithPatterns
 
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down)
+            if (e.KeyCode == Keys.S)
             {
                 _player.Position.Y += 10;
             }
 
-            if (e.KeyCode == Keys.Right)
+            if (e.KeyCode == Keys.D)
             {
                 _player.Position.X += 10;
             }
 
-            if (e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.A)
             {
                 _player.Position.X -= 10;
             }
 
-            if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.W)
             {
                 _player.Position.Y -= 10;
             }
-        }
-
-        private void GameForm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
-        private void GameForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
-        {
-            e.IsInputKey = true;
         }
     }
 }

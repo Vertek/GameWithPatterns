@@ -63,8 +63,6 @@
             this.Name = "GameForm";
             this.Text = "Zombie Game";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameForm_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameForm_KeyPress);
-            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GameForm_PreviewKeyDown);
             this.GameWindow.ResumeLayout(false);
             this.ResumeLayout(false);
 
