@@ -8,9 +8,10 @@ namespace GameWithPatterns.Account.Health
 {
     public interface IHealth
     {
+        int HealthThreshold { get; set; }
         void Heal();
         void Move();
-        void ApplyDamage();
+        void ApplyDamage(int damage);
         void Attack();
     }
 }

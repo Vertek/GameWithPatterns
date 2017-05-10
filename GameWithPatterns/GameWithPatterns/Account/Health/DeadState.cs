@@ -8,6 +8,14 @@ namespace GameWithPatterns.Account.Health
 {
     class DeadState : IHealth
     {
+        public int HealthThreshold { get; set; }
+        private Player _player;
+
+        public DeadState(Player player)
+        {
+            _player = player;
+        }
+
         public void Heal()
         {
             throw new NotImplementedException();
@@ -18,7 +26,7 @@ namespace GameWithPatterns.Account.Health
             throw new NotImplementedException();
         }
 
-        public void ApplyDamage()
+        public void ApplyDamage(int damage)
         {
             throw new NotImplementedException();
         }

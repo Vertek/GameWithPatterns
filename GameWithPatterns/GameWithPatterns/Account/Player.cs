@@ -1,4 +1,5 @@
-﻿using GameWithPatterns.Account.Health;
+﻿using System.Drawing;
+using GameWithPatterns.Account.Health;
 
 namespace GameWithPatterns.Account
 {
@@ -10,6 +11,9 @@ namespace GameWithPatterns.Account
             get { return _healthState; }
             set { _healthState = value; }
         }
+
+        private Point _position;
+        public Point Position;
 
         private static Player _instance;
         private static readonly object Padlock = new object();

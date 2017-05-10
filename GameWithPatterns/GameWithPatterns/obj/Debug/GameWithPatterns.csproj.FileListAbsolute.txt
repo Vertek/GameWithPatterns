@@ -11,4 +11,4 @@ C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.pdb
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.dll
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.pdb
-C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.Game.resources
+C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.GameForm.resources

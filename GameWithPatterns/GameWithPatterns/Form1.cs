@@ -7,21 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameWithPatterns.Account;
+using GameWithPatterns.Engine;
 using UtilsLibrary.Map;
 
 namespace GameWithPatterns
 {
-    public partial class Game : Form
+    public partial class GameForm : Form
     {
-        private static volatile Game instance;
+        private static volatile GameForm instance;
         private static readonly object padlock = new object();
         private List<MapElement> mapElements;
         private BackgroundWorker worker;
         private bool gameStatus = false;
+        private Player _player;
 
-        private Game()
+        private GameForm()
         {
             InitializeComponent();
+            KeyPreview = true;
             worker = new BackgroundWorker();
             worker.DoWork += WorkerOnDoWork;
             var parser = new Utils.MapParser();
@@ -38,7 +42,7 @@ namespace GameWithPatterns
             }
         }
 
-        public static Game getInstance()
+        public static GameForm getInstance()
         {
             if (instance == null)
             {
@@ -46,7 +50,7 @@ namespace GameWithPatterns
                 {
                     if (instance == null)
                     {
-                        instance = new Game();
+                        instance = new GameForm();
                     }
                 }
             }
@@ -60,7 +64,10 @@ namespace GameWithPatterns
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //ParseMapElement(new MapElement { Location = new Point(32,32), Type = ElementType.Sand, Name = "gowno"});
+            _player = Player.GetInstance();
+            var gameEngine = new GameEngine(_player, GameWindow);
+            gameEngine.Status = GameStatus.Started;
+            gameEngine.GameWorker.RunWorkerAsync();
         }
 
         private void GameWindow_Paint(object sender, PaintEventArgs e)
@@ -75,6 +82,39 @@ namespace GameWithPatterns
                 g.FillRectangles(new SolidBrush(map.getColor()), new[] { new Rectangle(map.Location.X, map.Location.Y, 32, 32) });
                 pen.Dispose();
             }
+        }
+
+        private void GameForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                _player.Position.Y += 10;
+            }
+
+            if (e.KeyCode == Keys.Right)
+            {
+                _player.Position.X += 10;
+            }
+
+            if (e.KeyCode == Keys.Left)
+            {
+                _player.Position.X -= 10;
+            }
+
+            if (e.KeyCode == Keys.Up)
+            {
+                _player.Position.Y -= 10;
+            }
+        }
+
+        private void GameForm_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void GameForm_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            e.IsInputKey = true;
         }
     }
 }

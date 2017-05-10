@@ -8,12 +8,13 @@ namespace GameWithPatterns.Account.Health
 {
     class HeavilyInjuredState : IHealth
     {
-        private Player _player;
+        private readonly Player _player;
+        public int HealthThreshold { get; set; }
 
         public HeavilyInjuredState(Player player)
         {
             _player = player;
-            _player.Health = 40;
+            HealthThreshold = 1;
         }
 
         public void Heal()
@@ -26,9 +27,13 @@ namespace GameWithPatterns.Account.Health
             _player.Movement = 100;
         }
 
-        public void ApplyDamage()
+        public void ApplyDamage(int damage)
         {
-            _player.AttackDamage = 100;
+            _player.Health -= damage;
+            if (_player.Health < HealthThreshold)
+            {
+                _player.HealthState = new DeadState(_player);
+            }
         }
 
         public void Attack()

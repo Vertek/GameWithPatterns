@@ -16,7 +16,7 @@ namespace GameWithPatterns
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(Game.getInstance());
+            Application.Run(GameForm.getInstance());
         }
     }
 }

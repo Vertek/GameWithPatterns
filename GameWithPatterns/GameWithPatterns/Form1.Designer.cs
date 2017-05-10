@@ -1,6 +1,6 @@
 ﻿namespace GameWithPatterns
 {
-    partial class Game
+    partial class GameForm
     {
         /// <summary>
         /// Required designer variable.
@@ -45,22 +45,26 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(706, 12);
+            this.button1.Location = new System.Drawing.Point(794, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Game
+            // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(881, 392);
             this.Controls.Add(this.GameWindow);
-            this.Name = "Game";
-            this.Text = "Game";
+            this.KeyPreview = true;
+            this.Name = "GameForm";
+            this.Text = "Zombie Game";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.GameForm_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameForm_KeyPress);
+            this.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.GameForm_PreviewKeyDown);
             this.GameWindow.ResumeLayout(false);
             this.ResumeLayout(false);
 

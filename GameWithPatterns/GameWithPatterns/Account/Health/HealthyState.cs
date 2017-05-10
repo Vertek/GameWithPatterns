@@ -9,15 +9,17 @@ namespace GameWithPatterns.Account.Health
     class HealthyState : IHealth
     {
         private Player _player;
+        public int HealthThreshold { get; set; }
 
         public HealthyState(Player player)
         {
             _player = player;
+            HealthThreshold = 70;
         }
 
         public void Heal()
         {
-            // nothing happen if take medic
+            // nothing happen if take medic, so?
         }
 
         public void Move()
@@ -25,9 +27,13 @@ namespace GameWithPatterns.Account.Health
             _player.Movement = 100;
         }
 
-        public void ApplyDamage()
+        public void ApplyDamage(int damage)
         {
-            _player.AttackDamage = 100;
+            _player.Health -= damage;
+            if (_player.Health <= HealthThreshold)
+            {
+                _player.HealthState = new InjuredState(_player);
+            }
         }
 
         public void Attack()
