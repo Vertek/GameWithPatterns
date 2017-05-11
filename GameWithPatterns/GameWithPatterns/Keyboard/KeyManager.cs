@@ -35,7 +35,14 @@ namespace GameWithPatterns.Keyboard
 
         public void KeyReaction(Keys key, bool keyPressed)
         {
-            
+            if (!keysPressed.ContainsKey(key))
+            {
+                keysPressed.Add(key, keyPressed);
+            }
+            else
+            {
+                keysPressed[key] = keyPressed;
+            }
         }
     }
 }

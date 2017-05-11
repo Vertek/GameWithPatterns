@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using GameWithPatterns.Account;
 using GameWithPatterns.Engine;
 using UtilsLibrary.Map;
+using GameWithPatterns.Keyboard;
 
 namespace GameWithPatterns
 {
@@ -21,12 +22,14 @@ namespace GameWithPatterns
         private BackgroundWorker worker;
         private bool gameStatus = false;
         private Player _player;
+        private KeyManager _keyManager;
 
         private GameForm()
         {
             InitializeComponent();
             SetStyle(ControlStyles.Selectable | ControlStyles.OptimizedDoubleBuffer, true);
             KeyPreview = true;
+            _keyManager = KeyManager.GetInstance();
             worker = new BackgroundWorker();
             worker.DoWork += WorkerOnDoWork;
             var parser = new Utils.MapParser();
@@ -89,6 +92,7 @@ namespace GameWithPatterns
 
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
+            _keyManager.KeyReaction(e.KeyCode, true);
             if (e.KeyCode == Keys.S)
             {
                 _player.Position.Y += 10;
@@ -116,6 +120,7 @@ namespace GameWithPatterns
 
         private void GameForm_KeyUp(object sender, KeyEventArgs e)
         {
+            _keyManager.KeyReaction(e.KeyCode, false);
             if (e.KeyCode == Keys.S)
             {
                 label2.Text = "DOWN: false";
