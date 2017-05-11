@@ -5,3 +5,10 @@ C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\UtilsLibrary\bin\Deb
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\UtilsLibrary\obj\Debug\UtilsLibrary.dll
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\UtilsLibrary\obj\Debug\UtilsLibrary.pdb
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\UtilsLibrary\obj\Debug\UtilsLibrary.csprojResolveAssemblyReference.cache
+D:\Repos\GameWithPatterns\GameWithPatterns\UtilsLibrary\bin\Debug\UtilsLibrary.dll
+D:\Repos\GameWithPatterns\GameWithPatterns\UtilsLibrary\bin\Debug\UtilsLibrary.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\UtilsLibrary\bin\Debug\Newtonsoft.Json.dll
+D:\Repos\GameWithPatterns\GameWithPatterns\UtilsLibrary\bin\Debug\Newtonsoft.Json.xml
+D:\Repos\GameWithPatterns\GameWithPatterns\UtilsLibrary\obj\Debug\UtilsLibrary.csprojResolveAssemblyReference.cache
+D:\Repos\GameWithPatterns\GameWithPatterns\UtilsLibrary\obj\Debug\UtilsLibrary.dll
+D:\Repos\GameWithPatterns\GameWithPatterns\UtilsLibrary\obj\Debug\UtilsLibrary.pdb

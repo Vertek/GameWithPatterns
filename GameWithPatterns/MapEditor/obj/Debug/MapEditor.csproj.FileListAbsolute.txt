@@ -12,3 +12,17 @@ C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.csproj.GenerateResource.Cache
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.exe
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\bin\Debug\MapEditor.exe.config
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.exe
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\bin\Debug\MapEditor.exe
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\bin\Debug\MapEditor.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\bin\Debug\Newtonsoft.Json.dll
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\bin\Debug\UtilsLibrary.dll
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\bin\Debug\UtilsLibrary.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\bin\Debug\Newtonsoft.Json.xml
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.csprojResolveAssemblyReference.cache
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.Editor.resources
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.Properties.Resources.resources
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.Settings.resources
+D:\Repos\GameWithPatterns\GameWithPatterns\MapEditor\obj\Debug\MapEditor.csproj.GenerateResource.Cache

@@ -9,6 +9,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameWithPatterns.Account;
+using System.Reflection;
 
 namespace GameWithPatterns.Engine
 {
@@ -41,7 +42,7 @@ namespace GameWithPatterns.Engine
             while (Status == GameStatus.Started)
             {
                 RenderMap();
-                InitializePlayer();
+                //InitializePlayer();
                 InitializeMonsters();
                 Thread.Sleep(100);
             }
@@ -49,11 +50,13 @@ namespace GameWithPatterns.Engine
 
         public void RenderMap()
         {
+            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, _gameWindow, new object[] { true });
             _gameWindow.Invalidate();
         }
 
         public void InitializePlayer()
         {
+            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, _gameWindow, new object[] { true });
             g.FillEllipse(new SolidBrush(Color.Black), _player.Position.X, _player.Position.Y, 16, 16);
         }
 

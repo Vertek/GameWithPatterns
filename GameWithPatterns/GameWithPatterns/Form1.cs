@@ -25,7 +25,7 @@ namespace GameWithPatterns
         private GameForm()
         {
             InitializeComponent();
-            SetStyle(ControlStyles.Selectable, true);
+            SetStyle(ControlStyles.Selectable | ControlStyles.OptimizedDoubleBuffer, true);
             KeyPreview = true;
             worker = new BackgroundWorker();
             worker.DoWork += WorkerOnDoWork;
@@ -83,6 +83,8 @@ namespace GameWithPatterns
                 g.FillRectangles(new SolidBrush(map.getColor()), new[] { new Rectangle(map.Location.X, map.Location.Y, 32, 32) });
                 pen.Dispose();
             }
+            if (_player != null)
+                g.FillEllipse(Brushes.Black, _player.Position.X, _player.Position.Y, 16, 16);
         }
 
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
@@ -90,21 +92,48 @@ namespace GameWithPatterns
             if (e.KeyCode == Keys.S)
             {
                 _player.Position.Y += 10;
+                label2.Text = "DOWN: true";
             }
 
             if (e.KeyCode == Keys.D)
             {
                 _player.Position.X += 10;
+                label3.Text = "RIGHT: true";
             }
 
             if (e.KeyCode == Keys.A)
             {
                 _player.Position.X -= 10;
+                label4.Text = "LEFT: true";
             }
 
             if (e.KeyCode == Keys.W)
             {
                 _player.Position.Y -= 10;
+                label1.Text = "UP: true";
+            }
+        }
+
+        private void GameForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.S)
+            {
+                label2.Text = "DOWN: false";
+            }
+
+            if (e.KeyCode == Keys.D)
+            {
+                label3.Text = "RIGHT: false";
+            }
+
+            if (e.KeyCode == Keys.A)
+            {
+                label4.Text = "LEFT: false";
+            }
+
+            if (e.KeyCode == Keys.W)
+            {
+                label1.Text = "UP: false";
             }
         }
     }

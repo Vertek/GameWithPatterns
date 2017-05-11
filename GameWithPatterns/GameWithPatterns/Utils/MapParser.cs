@@ -15,7 +15,7 @@ namespace GameWithPatterns.Utils
     {
         public List<MapElement> ParseJsonToMap()
         {
-            var path = @"C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\Map.json";
+            var path = @"D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\Map.json";
             var json = File.ReadAllText(path);
             return JsonConvert.DeserializeObject<List<MapElement>>(json);
         }

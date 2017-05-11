@@ -12,3 +12,16 @@ C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.dll
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.pdb
 C:\Users\Paczek\Documents\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.GameForm.resources
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.exe.config
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.exe
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.exe
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\GameWithPatterns.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\Newtonsoft.Json.dll
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.dll
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\UtilsLibrary.pdb
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\bin\Debug\Newtonsoft.Json.xml
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.csprojResolveAssemblyReference.cache
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.GameForm.resources
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.Properties.Resources.resources
+D:\Repos\GameWithPatterns\GameWithPatterns\GameWithPatterns\obj\Debug\GameWithPatterns.csproj.GenerateResource.Cache
