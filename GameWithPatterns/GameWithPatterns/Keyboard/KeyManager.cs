@@ -1,5 +1,7 @@
-﻿using System;
+﻿using GameWithPatterns.Account;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,16 +17,22 @@ namespace GameWithPatterns.Keyboard
 
         private KeyManager()
         {
-            keysPressed = new Dictionary<Keys, bool>();
+            keysPressed = new Dictionary<Keys, bool>()
+            {
+                { Keys.W, false },
+                { Keys.S, false },
+                { Keys.A, false },
+                { Keys.D, false }
+            };
         }
 
         public static KeyManager GetInstance()
         {
-            if(_instance == null)
+            if (_instance == null)
             {
-                lock(padlock)
+                lock (padlock)
                 {
-                    if(_instance == null)
+                    if (_instance == null)
                     {
                         _instance = new KeyManager();
                     }
@@ -42,6 +50,32 @@ namespace GameWithPatterns.Keyboard
             else
             {
                 keysPressed[key] = keyPressed;
+            }
+        }
+
+        public void CheckKeysPressed(Player player)
+        {
+            foreach (var elem in keysPressed)
+            {
+                if(elem.Key == Keys.W && elem.Value)
+                {
+                    player.Position.Y -= Convert.ToInt32(player.Movement);
+                }
+
+                if(elem.Key == Keys.S && elem.Value)
+                {
+                    player.Position.Y += Convert.ToInt32(player.Movement);
+                }
+
+                if (elem.Key == Keys.A && elem.Value)
+                {
+                    player.Position.X -= Convert.ToInt32(player.Movement);
+                }
+
+                if (elem.Key == Keys.D && elem.Value)
+                {
+                    player.Position.X += Convert.ToInt32(player.Movement);
+                }
             }
         }
     }

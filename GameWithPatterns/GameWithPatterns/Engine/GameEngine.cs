@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameWithPatterns.Account;
 using System.Reflection;
+using System.Diagnostics;
+using GameWithPatterns.Keyboard;
+using GameWithPatterns.Monsters;
 
 namespace GameWithPatterns.Engine
 {
@@ -27,11 +30,16 @@ namespace GameWithPatterns.Engine
         public BackgroundWorker GameWorker;
         private Control _gameWindow;
         private Graphics g;
+        private KeyManager _keyManager;
+        private int FPS = 60;
+        private List<IMonster> _monsters;
 
         public GameEngine(Player player, Control gameWindow)
         {
             _player = player;
             _gameWindow = gameWindow;
+            _keyManager = KeyManager.GetInstance();
+            _monsters = new List<IMonster>();
             GameWorker = new BackgroundWorker();
             GameWorker.DoWork += Game;
             g = gameWindow.CreateGraphics();
@@ -41,8 +49,8 @@ namespace GameWithPatterns.Engine
         {
             while (Status == GameStatus.Started)
             {
+                _keyManager.CheckKeysPressed(_player);
                 RenderMap();
-                //InitializePlayer();
                 InitializeMonsters();
                 Thread.Sleep(100);
             }
@@ -54,20 +62,24 @@ namespace GameWithPatterns.Engine
             _gameWindow.Invalidate();
         }
 
-        public void InitializePlayer()
-        {
-            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, _gameWindow, new object[] { true });
-            g.FillEllipse(new SolidBrush(Color.Black), _player.Position.X, _player.Position.Y, 16, 16);
-        }
-
         public void InitializeMonsters()
         {
-            
+
         }
 
         public void InitializeItems()
         {
             
+        }
+
+        public void AddMonster(IMonster monster)
+        {
+            _monsters.Add(monster);
+        }
+
+        public List<IMonster> GetMonsters()
+        {
+            return _monsters;
         }
     }
 }

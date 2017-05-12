@@ -11,6 +11,7 @@ using GameWithPatterns.Account;
 using GameWithPatterns.Engine;
 using UtilsLibrary.Map;
 using GameWithPatterns.Keyboard;
+using GameWithPatterns.Monsters;
 
 namespace GameWithPatterns
 {
@@ -23,6 +24,7 @@ namespace GameWithPatterns
         private bool gameStatus = false;
         private Player _player;
         private KeyManager _keyManager;
+        private GameEngine _gameEngine;
 
         private GameForm()
         {
@@ -69,9 +71,9 @@ namespace GameWithPatterns
         private void button1_Click(object sender, EventArgs e)
         {
             _player = Player.GetInstance();
-            var gameEngine = new GameEngine(_player, GameWindow);
-            gameEngine.Status = GameStatus.Started;
-            gameEngine.GameWorker.RunWorkerAsync();
+            _gameEngine = new GameEngine(_player, GameWindow);
+            _gameEngine.Status = GameStatus.Started;
+            _gameEngine.GameWorker.RunWorkerAsync();
         }
 
         private void GameWindow_Paint(object sender, PaintEventArgs e)
@@ -88,58 +90,80 @@ namespace GameWithPatterns
             }
             if (_player != null)
                 g.FillEllipse(Brushes.Black, _player.Position.X, _player.Position.Y, 16, 16);
+
+            if(_gameEngine != null)
+            {
+                var monsters = _gameEngine.GetMonsters();
+
+                foreach (var item in monsters)
+                {
+                    g.FillEllipse(Brushes.Silver, ((StandardZombie)item).position.X, ((StandardZombie)item).position.Y, 16, 16);
+                }
+            }
         }
 
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
             _keyManager.KeyReaction(e.KeyCode, true);
-            if (e.KeyCode == Keys.S)
-            {
-                _player.Position.Y += 10;
-                label2.Text = "DOWN: true";
-            }
+            label2.Text = "X: " + _player.Position.X + " Y: " + _player.Position.Y;
+            //if (e.KeyCode == Keys.S)
+            //{
+            //    _player.Position.Y += 10;
+            //    label2.Text = "DOWN: true";
+            //}
 
-            if (e.KeyCode == Keys.D)
-            {
-                _player.Position.X += 10;
-                label3.Text = "RIGHT: true";
-            }
+            //if (e.KeyCode == Keys.D)
+            //{
+            //    _player.Position.X += 10;
+            //    label3.Text = "RIGHT: true";
+            //}
 
-            if (e.KeyCode == Keys.A)
-            {
-                _player.Position.X -= 10;
-                label4.Text = "LEFT: true";
-            }
+            //if (e.KeyCode == Keys.A)
+            //{
+            //    _player.Position.X -= 10;
+            //    label4.Text = "LEFT: true";
+            //}
 
-            if (e.KeyCode == Keys.W)
-            {
-                _player.Position.Y -= 10;
-                label1.Text = "UP: true";
-            }
+            //if (e.KeyCode == Keys.W)
+            //{
+            //    _player.Position.Y -= 10;
+            //    label1.Text = "UP: true";
+            //}
         }
 
         private void GameForm_KeyUp(object sender, KeyEventArgs e)
         {
             _keyManager.KeyReaction(e.KeyCode, false);
-            if (e.KeyCode == Keys.S)
-            {
-                label2.Text = "DOWN: false";
-            }
+            label2.Text = "X: " + _player.Position.X + " Y: " + _player.Position.Y;
+            //if (e.KeyCode == Keys.S)
+            //{
+            //    label2.Text = "DOWN: false";
+            //}
 
-            if (e.KeyCode == Keys.D)
-            {
-                label3.Text = "RIGHT: false";
-            }
+            //if (e.KeyCode == Keys.D)
+            //{
+            //    label3.Text = "RIGHT: false";
+            //}
 
-            if (e.KeyCode == Keys.A)
-            {
-                label4.Text = "LEFT: false";
-            }
+            //if (e.KeyCode == Keys.A)
+            //{
+            //    label4.Text = "LEFT: false";
+            //}
 
-            if (e.KeyCode == Keys.W)
-            {
-                label1.Text = "UP: false";
-            }
+            //if (e.KeyCode == Keys.W)
+            //{
+            //    label1.Text = "UP: false";
+            //}
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Random r = new Random();
+            var x = r.Next(50, 250);
+            var y = r.Next(50, 250);
+            var monster = new StandardZombie();
+            monster.position = new Point(x, y);
+            _gameEngine.AddMonster(monster);
         }
     }
 }

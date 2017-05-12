@@ -25,6 +25,10 @@ namespace GameWithPatterns.Account
         private Player()
         {
             _healthState = new HealthyState(this);
+            Health = 100;
+            Movement = 5;
+            AttackDamage = 10;
+            Accuracy = 10;
         }
 
         public static Player GetInstance()
