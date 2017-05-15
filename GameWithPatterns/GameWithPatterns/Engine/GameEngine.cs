@@ -13,6 +13,7 @@ using System.Reflection;
 using System.Diagnostics;
 using GameWithPatterns.Keyboard;
 using GameWithPatterns.Monsters;
+using GameWithPatterns.Commands;
 
 namespace GameWithPatterns.Engine
 {
@@ -49,9 +50,9 @@ namespace GameWithPatterns.Engine
         {
             while (Status == GameStatus.Started)
             {
-                _keyManager.CheckKeysPressed(_player);
                 RenderMap();
                 InitializeMonsters();
+                Invoker.InvokeCommands();
                 Thread.Sleep(100);
             }
         }

@@ -102,58 +102,21 @@ namespace GameWithPatterns
             }
         }
 
+        public int count = 0;
+
         private void GameForm_KeyDown(object sender, KeyEventArgs e)
         {
             _keyManager.KeyReaction(e.KeyCode, true);
-            label2.Text = "X: " + _player.Position.X + " Y: " + _player.Position.Y;
-            //if (e.KeyCode == Keys.S)
-            //{
-            //    _player.Position.Y += 10;
-            //    label2.Text = "DOWN: true";
-            //}
+            _keyManager.CheckKeysPressed(_player);
 
-            //if (e.KeyCode == Keys.D)
-            //{
-            //    _player.Position.X += 10;
-            //    label3.Text = "RIGHT: true";
-            //}
-
-            //if (e.KeyCode == Keys.A)
-            //{
-            //    _player.Position.X -= 10;
-            //    label4.Text = "LEFT: true";
-            //}
-
-            //if (e.KeyCode == Keys.W)
-            //{
-            //    _player.Position.Y -= 10;
-            //    label1.Text = "UP: true";
-            //}
+            label2.Text = "X: " + _player.Position.X + " Y: " + _player.Position.Y + " C: " + count++;
         }
 
         private void GameForm_KeyUp(object sender, KeyEventArgs e)
         {
             _keyManager.KeyReaction(e.KeyCode, false);
+            _keyManager.CheckKeysPressed(_player);
             label2.Text = "X: " + _player.Position.X + " Y: " + _player.Position.Y;
-            //if (e.KeyCode == Keys.S)
-            //{
-            //    label2.Text = "DOWN: false";
-            //}
-
-            //if (e.KeyCode == Keys.D)
-            //{
-            //    label3.Text = "RIGHT: false";
-            //}
-
-            //if (e.KeyCode == Keys.A)
-            //{
-            //    label4.Text = "LEFT: false";
-            //}
-
-            //if (e.KeyCode == Keys.W)
-            //{
-            //    label1.Text = "UP: false";
-            //}
         }
 
         private void button2_Click(object sender, EventArgs e)

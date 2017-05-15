@@ -1,4 +1,5 @@
 ﻿using GameWithPatterns.Account;
+using GameWithPatterns.Commands;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -59,22 +60,27 @@ namespace GameWithPatterns.Keyboard
             {
                 if(elem.Key == Keys.W && elem.Value)
                 {
-                    player.Position.Y -= Convert.ToInt32(player.Movement);
+
+                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
+                    //player.Position.Y -= Convert.ToInt32(player.Movement);
                 }
 
                 if(elem.Key == Keys.S && elem.Value)
                 {
-                    player.Position.Y += Convert.ToInt32(player.Movement);
+                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
+                    //player.Position.Y += Convert.ToInt32(player.Movement);
                 }
 
                 if (elem.Key == Keys.A && elem.Value)
                 {
-                    player.Position.X -= Convert.ToInt32(player.Movement);
+                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
+                    //player.Position.X -= Convert.ToInt32(player.Movement);
                 }
 
                 if (elem.Key == Keys.D && elem.Value)
                 {
-                    player.Position.X += Convert.ToInt32(player.Movement);
+                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
+                    //player.Position.X += Convert.ToInt32(player.Movement);
                 }
             }
         }
