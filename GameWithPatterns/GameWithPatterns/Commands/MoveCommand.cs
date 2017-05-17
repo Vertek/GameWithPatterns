@@ -3,18 +3,20 @@ using GameWithPatterns.Utils;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GameWithPatterns.Commands
 {
     public class MoveCommand : BaseCommand
     {
-        private Vector _direction;
+        private Point _direction;
         private Player _player;
 
-        public MoveCommand(Vector direction, Player player)
+        public MoveCommand(Point direction, Player player)
         {
             _direction = direction;
             _player = player;
@@ -22,10 +24,17 @@ namespace GameWithPatterns.Commands
 
         public override void Execute()
         {
-            var previous = GetTimestamp();
-            var currentTime = Stopwatch.GetTimestamp();
-            var differentTime = (currentTime - previous) / 60;
-            _player.Position = new System.Drawing.Point(differentTime * _player.Movement)
+            long previous = _player.LastMoveTimestamp;
+            long cmdTimestamp = GetTimestamp();
+            long dt = (cmdTimestamp - previous);
+            if (dt < 0)
+                dt = 0;
+
+           _player.Position = new Vector(
+               _player.Position.X + _player.Direction.X * dt / 1000f * _player.Movement, 
+               _player.Position.Y + _player.Direction.Y * dt / 1000f * _player.Movement);
+            _player.LastMoveTimestamp = cmdTimestamp;
+            _player.Direction= _direction;
         }
     }
 }

@@ -53,7 +53,8 @@ namespace GameWithPatterns.Engine
                 RenderMap();
                 InitializeMonsters();
                 Invoker.InvokeCommands();
-                Thread.Sleep(100);
+                Invoker.AddCommand(new MoveCommand(_player.Direction, _player));
+                Thread.Sleep(1);
             }
         }
 

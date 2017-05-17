@@ -56,33 +56,9 @@ namespace GameWithPatterns.Keyboard
 
         public void CheckKeysPressed(Player player)
         {
-            foreach (var elem in keysPressed)
-            {
-                if(elem.Key == Keys.W && elem.Value)
-                {
-
-                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
-                    //player.Position.Y -= Convert.ToInt32(player.Movement);
-                }
-
-                if(elem.Key == Keys.S && elem.Value)
-                {
-                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
-                    //player.Position.Y += Convert.ToInt32(player.Movement);
-                }
-
-                if (elem.Key == Keys.A && elem.Value)
-                {
-                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
-                    //player.Position.X -= Convert.ToInt32(player.Movement);
-                }
-
-                if (elem.Key == Keys.D && elem.Value)
-                {
-                    Invoker.AddCommand(new MoveCommand(new Utils.Vector(0, 494), player));
-                    //player.Position.X += Convert.ToInt32(player.Movement);
-                }
-            }
+            int x = keysPressed[Keys.A] ? -1 : (keysPressed[Keys.D] ? 1 : 0);
+            int y = keysPressed[Keys.W] ? -1 : (keysPressed[Keys.S] ? 1 : 0);
+            Invoker.AddCommand(new MoveCommand(new Point(x,y), player));
         }
     }
 }

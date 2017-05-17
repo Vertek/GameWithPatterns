@@ -8,10 +8,10 @@ namespace GameWithPatterns.Utils
 {
     public class Vector
     {
-        public int X;
-        public int Y;
+        public float X;
+        public float Y;
 
-        public Vector(int x, int y)
+        public Vector(float x, float y)
         {
             X = x;
             Y = y;
