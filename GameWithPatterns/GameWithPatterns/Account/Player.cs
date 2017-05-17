@@ -6,7 +6,7 @@ using GameWithPatterns.Commands;
 
 namespace GameWithPatterns.Account
 {
-    public class Player
+    public class Player : IMovable
     {
         private IHealth _healthState;
         public IHealth HealthState
@@ -14,8 +14,42 @@ namespace GameWithPatterns.Account
             get { return _healthState; }
             set { _healthState = value; }
         }
-        public Point Direction = new Point(0, 0);
-        public Vector Position = new Vector(0, 0);
+        //public Point Direction = new Point(0, 0);
+        //public Vector Position = new Vector(0, 0);
+
+        private Vector _position;
+        public Vector Position
+        {
+            get
+            {
+                if (_position == null)
+                {
+                    _position = new Vector(0, 0);
+                }
+                return _position;
+            }
+            set
+            {
+                _position = value;
+            }
+        }
+
+        private Point _direction;
+        public Point Direction
+        {
+            get
+            {
+                if(_direction == null)
+                {
+                    _direction = new Point(0, 0);
+                }
+                return _direction;
+            }
+            set
+            {
+                _direction = value;
+            }
+        }
 
         private static Player _instance;
         private static readonly object Padlock = new object();

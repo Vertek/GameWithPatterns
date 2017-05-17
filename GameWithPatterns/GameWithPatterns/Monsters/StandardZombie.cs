@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameWithPatterns.Utils;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,50 +8,21 @@ using System.Threading.Tasks;
 
 namespace GameWithPatterns.Monsters
 {
-    public class StandardZombie : IMonster
+    public class StandardZombie : BaseMonster
     {
-        public int Damage
+        public StandardZombie()
         {
-            get
-            {
-                return Damage;
-            }
-
-            set
-            {
-                Damage = value;
-            }
+            Health = 100;
+            Damage = 10;
+            Movement = 5;
         }
 
-        public int Health
+        public override int Attack()
         {
-            get
-            {
-                return Health;
-            }
-
-            set
-            {
-                Health = value;
-            }
+            throw new NotImplementedException();
         }
 
-        public int Movement
-        {
-            get
-            {
-                return Movement;
-            }
-
-            set
-            {
-                Movement = value;
-            }
-        }
-
-        public Point position;
-
-        public void Attack()
+        public override float Move()
         {
             throw new NotImplementedException();
         }

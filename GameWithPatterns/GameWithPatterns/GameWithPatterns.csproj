@@ -55,6 +55,7 @@
     <Compile Include="Account\Health\HeavilyInjuredState.cs" />
     <Compile Include="Account\Health\IHealth.cs" />
     <Compile Include="Account\Health\InjuredState.cs" />
+    <Compile Include="Account\IMovable.cs" />
     <Compile Include="Commands\BaseCommand.cs" />
     <Compile Include="Commands\CommandQueueStopwatch.cs" />
     <Compile Include="Commands\ICommand.cs" />
@@ -69,10 +70,14 @@
     <Compile Include="Account\Player.cs" />
     <Compile Include="Engine\GameEngine.cs" />
     <Compile Include="Keyboard\KeyManager.cs" />
+    <Compile Include="Monsters\BaseMonster.cs" />
     <Compile Include="Monsters\IMonster.cs" />
     <Compile Include="Monsters\StandardZombie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\BufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utils\Extensions.cs" />
     <Compile Include="Utils\MapParser.cs" />
     <Compile Include="Utils\Vector.cs" />

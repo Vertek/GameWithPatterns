@@ -13,17 +13,5 @@ namespace GameWithPatterns.Utils
         {
 
         }
-
-        public static int ToInt32<T>(this T number, int def = 0) where T : struct 
-        {
-            try
-            {
-                return Convert.ToInt32(number);
-            }
-            catch(Exception ex)
-            {
-                return def;
-            }
-        }
     }
 }

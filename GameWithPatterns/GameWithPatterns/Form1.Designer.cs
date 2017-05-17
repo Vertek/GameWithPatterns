@@ -1,4 +1,6 @@
-﻿namespace GameWithPatterns
+﻿using GameWithPatterns.Utils;
+
+namespace GameWithPatterns
 {
     partial class GameForm
     {
@@ -28,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GameWindow = new System.Windows.Forms.Panel();
+            this.GameWindow = new BufferedPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -128,7 +130,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel GameWindow;
+        private BufferedPanel GameWindow;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;

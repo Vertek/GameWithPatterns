@@ -32,7 +32,6 @@ namespace GameWithPatterns.Engine
         private Control _gameWindow;
         private Graphics g;
         private KeyManager _keyManager;
-        private int FPS = 60;
         private List<IMonster> _monsters;
 
         public GameEngine(Player player, Control gameWindow)
@@ -60,28 +59,18 @@ namespace GameWithPatterns.Engine
 
         public void RenderMap()
         {
-            typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, _gameWindow, new object[] { true });
+            //typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, _gameWindow, new object[] { true });
             _gameWindow.Invalidate();
         }
 
         public void InitializeMonsters()
         {
-
+            _monsters.Add(new StandardZombie());
         }
 
         public void InitializeItems()
         {
             
-        }
-
-        public void AddMonster(IMonster monster)
-        {
-            _monsters.Add(monster);
-        }
-
-        public List<IMonster> GetMonsters()
-        {
-            return _monsters;
         }
     }
 }

@@ -9,11 +9,7 @@ namespace GameWithPatterns.Monsters
 {
     public interface IMonster
     {
-        int Health { get; set; }
-        int Movement { get; set; }
-        int Damage { get; set; }
-
-        void Attack();
-
+        int Attack();
+        float Move();
     }
 }

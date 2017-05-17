@@ -14,9 +14,9 @@ namespace GameWithPatterns.Commands
     public class MoveCommand : BaseCommand
     {
         private Point _direction;
-        private Player _player;
+        private IMovable _player;
 
-        public MoveCommand(Point direction, Player player)
+        public MoveCommand(Point direction, IMovable player)
         {
             _direction = direction;
             _player = player;

@@ -63,11 +63,6 @@ namespace GameWithPatterns
             return instance;
         }
 
-        //public Form1()
-        //{
-        //    InitializeComponent();
-        //}
-
         private void button1_Click(object sender, EventArgs e)
         {
             _player = Player.GetInstance();
@@ -78,28 +73,23 @@ namespace GameWithPatterns
 
         private void GameWindow_Paint(object sender, PaintEventArgs e)
         {
-            var g = e.Graphics;
+            var bitmap = new Bitmap(GameWindow.Width, GameWindow.Height);
 
-            foreach (var map in mapElements)
+            using (var g = Graphics.FromImage(bitmap))
             {
-                Pen pen = new Pen(map.getColor(), 2);
-
-                g.DrawRectangles(pen, new[] {new Rectangle(map.Location.X, map.Location.Y, 32, 32)});
-                g.FillRectangles(new SolidBrush(map.getColor()), new[] { new Rectangle(map.Location.X, map.Location.Y, 32, 32) });
-                pen.Dispose();
-            }
-            if (_player != null)
-                g.FillEllipse(Brushes.Black, _player.Position.X, _player.Position.Y, 16, 16);
-
-            if(_gameEngine != null)
-            {
-                var monsters = _gameEngine.GetMonsters();
-
-                foreach (var item in monsters)
+                foreach (var map in mapElements)
                 {
-                    g.FillEllipse(Brushes.Silver, ((StandardZombie)item).position.X, ((StandardZombie)item).position.Y, 16, 16);
+                    Pen pen = new Pen(map.getColor(), 2);
+
+                    g.DrawRectangles(pen, new[] { new Rectangle(map.Location.X, map.Location.Y, 32, 32) });
+                    g.FillRectangles(new SolidBrush(map.getColor()), new[] { new Rectangle(map.Location.X, map.Location.Y, 32, 32) });
+                    pen.Dispose();
                 }
+                if (_player != null)
+                    g.FillEllipse(Brushes.Black, _player.Position.X, _player.Position.Y, 16, 16);
             }
+
+            e.Graphics.DrawImage(bitmap, Point.Empty);
         }
 
         public int count = 0;
@@ -125,8 +115,7 @@ namespace GameWithPatterns
             var x = r.Next(50, 250);
             var y = r.Next(50, 250);
             var monster = new StandardZombie();
-            monster.position = new Point(x, y);
-            _gameEngine.AddMonster(monster);
+            monster.Position = new Utils.Vector(x, y);
         }
     }
 }
